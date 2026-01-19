@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "e-typing Rank Scraper",
+  "version": "1.0",
+  "permissions": [
+    "storage", 
+    "activeTab", 
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://*.e-typing.ne.jp/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.e-typing.ne.jp/ranking/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
